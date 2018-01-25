@@ -1,0 +1,85 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Health Monitoring System{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="shortcut icon" href="{{url_for('static',filename='a.ico')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css_contact_file_5.css')}}">
+{% endblock %}
+{% block head %}
+{{super()}}
+<link rel="shortcut icon" href="{{url_for('static',filename='a.ico')}}">
+{% endblock %}
+
+{% block content %}
+
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/home">Home</a>
+             <a class="navbar-brand" href="/about">About us</a>
+             <a class="navbar-brand" href="/signup">Signup</a>
+
+        </div>
+
+
+          <form class="navbar-form navbar-right" action="/login" method="post">
+            <div class="form-group">
+              <input name='username' type="email" placeholder="Email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <input name="password" type="password" placeholder="Password" class="form-control" minlength="8" maxlength="80" required>
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+<div class="my_class">
+    <div class="col-lg-offset-4 col-lg-4" id="panel">
+        <div id="main">
+        <form method="post" action="/home">
+
+            <div class="group">
+                <input type="text" name="name" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label><b>Name</b></label>
+            </div>
+
+            <div class="group">
+                <input type="email" name="email" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label><b>Email</b></label>
+            </div>
+
+            <div class="group">
+                <input type="text" minlength="9" maxlength="10" name="mobile" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label><b>Mobile No</b></label>
+            </div>
+
+            <div class="group">
+                <input type="text" name="message" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label><b>Message</b></label>
+            </div>
+            <div class="group">
+                <center> <button type="submit" class="btn btn-danger">Send <span class="glyphicon glyphicon-send"></span></button></center>
+            </div>
+        </form>
+        </div>
+    </div>
+
+    </div>
+
+{% endblock %}
